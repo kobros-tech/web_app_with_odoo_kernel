@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="hello_world.selfIndex">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <p>We're currently closed.
+                    <span t-if="state.name"><t t-esc="state.name"/></span>
+                </p>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </t>
+</templates>
