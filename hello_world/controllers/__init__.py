@@ -3,3 +3,4 @@
 
 from . import main
 from . import app
+from . import calls_in_json

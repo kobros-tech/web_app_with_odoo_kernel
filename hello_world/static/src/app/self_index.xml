@@ -8,7 +8,11 @@
                     <span t-if="state.name"><t t-esc="state.name"/></span>
                 </p>
             </div>
-            <div class="col-4"></div>
+            <div class="col-4">
+                <p t-on-click="fooName">Click to Foo</p>
+            </div>
         </div>
+
+        <MainComponentsContainer />
     </t>
 </templates>

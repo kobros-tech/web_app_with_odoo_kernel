@@ -7,10 +7,12 @@ import { MainComponentsContainer } from "@web/core/main_components_container";
 import { parseHash, parseSearchQuery, routeToUrl } from "@web/core/browser/router_service";
 
 
+// http://localhost:8070/home#name=Mohamed
+
 export class selfIndex extends Component {
     static template = "hello_world.selfIndex";
     static props = [];
-    static Component = {
+    static components = {
         MainComponentsContainer,
     }
     
@@ -44,6 +46,11 @@ export class selfIndex extends Component {
             console.log(this.state.name);
             console.log(typeof(this.state));
         })
+    }
+
+    fooName() {
+        console.log("Foo clicked!");
+        this.state.name = "Foo";
     }
 }
 

@@ -4,7 +4,6 @@
 import re
 import werkzeug.exceptions
 import werkzeug.urls
-from odoo import http, _
 from odoo.http import request, route, Controller
 from odoo import http, tools, _, SUPERUSER_ID, release
 
