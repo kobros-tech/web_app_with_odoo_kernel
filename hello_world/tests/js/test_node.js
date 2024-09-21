@@ -68,7 +68,43 @@ async function test_json_calls_get() {
             },
             method: "GET",
             mode: "cors",
-            credentials: "include",
+            credentials: "same-origin",
+        });
+        const data = await response.json();
+        
+        console.log("Successful Get");
+        console.log(data);
+    }
+    catch(err) {
+        console.log(err);
+    }
+    
+}
+
+async function test_json_calls_post() {
+
+    try{
+        const response = await fetch('http://localhost:8070/json_call_post', {
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+                id: 1,
+                jsonrpc: "2.0",
+                method: "call",
+                params: {
+                    model: "mail.partner.device",
+                    method: "register_devices",
+                    args: [],
+                    kwargs: {},
+                    context: {},
+                    path: {'key': 2, 'value': false},
+                    index: 154,
+                },
+            }),
+            method: "POST",
+            mode: "cors",
+            credentials: "same-origin",
         });
         const data = await response.json();
         
@@ -85,3 +121,4 @@ async function test_json_calls_get() {
 test_get();
 test_post();
 test_json_calls_get();
+test_json_calls_post();
